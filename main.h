@@ -50,7 +50,7 @@ void ModernTriangle::render()
 
 void ModernTriangle::initialize()
 {
-    glClearColor(0.5f, 0.5f, 1.0f, 1.0f);
+    glClearColor(0.2f, 0.5f, 1.0f, 1.0f);
 
     m_program = new QOpenGLShaderProgram();
     m_program->addShaderFromSourceCode(QOpenGLShader::Vertex,
@@ -84,9 +84,9 @@ void ModernTriangle::initialize()
     };
 
     static const float vertexColors[] = {
-        1.0f, .0f, .0f, //red (r,g,b) values for each vertex
+        .0f, 1.0f, .0f, //red (r,g,b) values for each vertex
         .0f, 1.0f, .0f, //green
-        .0f, .0f, 1.0f //blue
+        .0f, 1.0f, 0.0f //blue
     };
 
     m_vao.create();
@@ -97,6 +97,7 @@ void ModernTriangle::initialize()
     m_vvbo.setUsagePattern(QOpenGLBuffer::StaticDraw);
     m_vvbo.bind();
     m_vvbo.allocate(vertexPositions, 9 * sizeof(float));
+
     m_program->enableAttributeArray("position"); //this labels an attribute "position"
     //that points to the memory slot from the last buffer allocate()
     //the position attribute is an input to our vertex shader

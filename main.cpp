@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     format.setSamples(24);
     format.setVersion(3, 1);
     format.setRenderableType(QSurfaceFormat::OpenGL);
-    //format.setProfile( QSurfaceFormat::CoreProfile );
+    format.setProfile( QSurfaceFormat::CoreProfile );
 
     ModernTriangle window;
     window.setFormat(format);
